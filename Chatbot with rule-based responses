@@ -1,0 +1,78 @@
+import re
+import random
+
+def simple_chatbot(user_input):
+    # Convert user input to lowercase for case-insensitivity
+    user_input = user_input.lower()
+
+    # Define patterns and corresponding responses
+    greetings_patterns = ['hi', 'hello', 'hey', 'greetings']
+    farewell_patterns = ['bye', 'goodbye', 'see you']
+    weather_patterns = ['weather', 'forecast']
+    how_are_you_patterns = ['how are you', 'how are you doing']
+    time_patterns = ['time', 'current time']
+    joke_patterns = ['tell me a joke', 'joke','funny']
+    gratitude_patterns = ['thank you', 'thanks']
+    compliments_patterns = ['you are awesome', 'great job', 'well done','amazing','incredible']
+    name_patterns = ['what is your name', 'your name', 'who are you']
+    help_patterns = ['help', 'assistance', 'support']
+    favorite_patterns = ['your favorite color', 'your favorite food']
+    age_patterns = ['how old are you', 'your age']
+    random_patterns = ['random']
+
+    # Check for patterns in user input and respond accordingly
+    if any(pattern in user_input for pattern in greetings_patterns):
+        return random.choice(["Hello! How can I assist you today?", "Hi there!", "Hey! What's up?"])
+
+    elif any(pattern in user_input for pattern in farewell_patterns):
+        return random.choice(["Goodbye! Have a great day.", "See you later!", "Farewell!","Goodbye!"])
+
+    elif any(pattern in user_input for pattern in weather_patterns):
+        return "I'm sorry, I'm just a simple chatbot and I don't have the ability to provide weather information."
+
+    elif any(pattern in user_input for pattern in how_are_you_patterns):
+        return random.choice(["I'm doing well, thank you!", "Not too bad! How about you?", "I'm a bot, so I don't have feelings, but I'm here to help!"])
+
+    elif any(pattern in user_input for pattern in time_patterns):
+        # You can replace this with a function to get the current time
+        return "I don't have the ability to tell the time at the moment."
+
+    elif any(pattern in user_input for pattern in joke_patterns):
+        return random.choice(["Why don't scientists trust atoms? Because they make up everything!", "What do you call fake spaghetti? An impasta!","Why did the bot cross the road? Because it was programmed to do so."])
+
+    elif any(pattern in user_input for pattern in gratitude_patterns):
+        return random.choice(["You're welcome!", "Glad I could help!", "No problem, happy to assist!"])
+
+    elif any(pattern in user_input for pattern in compliments_patterns):
+        return random.choice(["Thank you! You're pretty awesome too!", "I appreciate the compliment!", "You made my day!"])
+
+    elif any(pattern in user_input for pattern in name_patterns):
+        return "I'm just a chatbot, so I don't have a personal name. You can call me Chatbot!"
+
+    elif any(pattern in user_input for pattern in help_patterns):
+        return random.choice(["Sure, I'm here to help! What do you need assistance with?", "How can I assist you today?"])
+
+    elif any(pattern in user_input for pattern in favorite_patterns):
+        return random.choice(["I don't have personal preferences, but I'm here to chat with you!"])
+
+    elif any(pattern in user_input for pattern in age_patterns):
+        return "I don't have an age. I'm just a computer program designed to chat with you!"
+
+    elif any(pattern in user_input for pattern in random_patterns):
+        return random.choice(["Sure, here's a random response!", "Random answer just for you!", "Ask me something else randomly!"])
+
+    else:
+        return random.choice(["I'm not sure how to respond to that.", "Could you please ask me something else?", "Sorry, I didn't quite get that."])
+
+# Main loop for interacting with the chatbot
+while True:
+    user_input = input("You: ")
+    
+    # Exit the loop if the user inputs 'exit' or 'quit'
+    if user_input.lower() in ['exit', 'quit']:
+        print("Goodbye! Thanks for chatting.") 
+        break
+
+    # Get the bot's response and print it
+    response = simple_chatbot(user_input)
+    print("Bot:", response)
