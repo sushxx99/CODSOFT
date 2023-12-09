@@ -1,6 +1,5 @@
 # CODSOFT
-The tasks that I chose to work on are:
-1. Chatbot with rule-based responses
+The tasks that I chose to work on are:1. Chatbot with rule-based responses
    This project focuses on the development of a rule-based chatbot capable of providing structured responses. The chatbot leverages predefined rules to generate appropriate replies, enhancing user interaction.
    
 2: Tic-Tac-Toe AI
